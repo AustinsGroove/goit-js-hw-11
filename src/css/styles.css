@@ -3,6 +3,49 @@
   --animation-duration: 250ms;
 }
 
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 16px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-image: linear-gradient(
+    90deg,
+    rgba(255, 0, 0, 0.7),
+    rgba(0, 26, 255, 0.7)
+  );
+  color: #212121;
+  line-height: 1.5;
+}
+
+input {
+  padding: 8px;
+  font: inherit;
+}
+
+button {
+  padding: 12px 12px;
+  cursor: pointer;
+}
+
+.hidden {
+  /* position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden; */
+  visibility: hidden;
+}
+
 .gallery {
   display: flex;
   gap: 30px;
@@ -18,12 +61,17 @@
 .gallery-item {
   position: relative;
   width: 240px;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 0.4);
   box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
     0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
-  transition: transform var(--animation-duration) var(--timing-function);
+  transition: transform var(--animation-duration) var(--timing-function),
+    background-color var(--animation-duration) var(--timing-function);
 }
 
 .gallery-item:hover {
+  background-color: rgba(255, 255, 255, 0.6);
   transform: scale(1.03);
 }
 
@@ -31,6 +79,7 @@
   height: 200px;
   width: 100%;
   object-fit: cover;
+  display: block;
 }
 
 .gallery-link {
@@ -53,11 +102,25 @@
   text-align: center;
   color: black;
   line-height: 1.5;
+  border-top: 1px solid rgba(128, 128, 128, 0.3);
 }
 
 .search-form {
   display: flex;
   justify-content: center;
-  background-color: yellowgreen;
+  background-color: rgba(255, 255, 255, 0.6);
   padding: 10px;
+  border-radius: 10px;
+}
+
+.load-more {
+  display: block;
+  margin: 0 auto;
+}
+
+.end-notify {
+  text-align: center;
+  background-color: rgba(255, 99, 71, 0.448);
+  padding: 10px;
+  margin-bottom: 50px;
 }
